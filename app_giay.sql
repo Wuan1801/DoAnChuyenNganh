@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 16, 2023 lúc 07:27 AM
+-- Thời gian đã tạo: Th12 28, 2023 lúc 06:05 PM
 -- Phiên bản máy phục vụ: 10.4.28-MariaDB
 -- Phiên bản PHP: 8.2.4
 
@@ -68,14 +68,30 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`id`, `user_id`, `address`, `phone_number`, `email`, `num`, `total_money`, `status`) VALUES
 (76, 45, 'bb', '0123456789', 'user2@gmail.com', 2, '854000', 4),
-(77, 45, 'as', '0123456789', 'user2@gmail.com', 3, '357000', 1),
+(77, 45, 'as', '0123456789', 'user2@gmail.com', 3, '357000', 3),
 (78, 45, 'av', '0123456789', 'user2@gmail.com', 2, '336000', 3),
 (79, 45, 'ab', '0123456789', 'user2@gmail.com', 2, '1750000', 0),
 (80, 45, 'ab', '0123456789', 'user2@gmail.com', 2, '358000', 0),
 (81, 45, 'az', '0123456789', 'user2@gmail.com', 3, '1281000', 0),
-(82, 45, 'xz', '0123456789', 'user2@gmail.com', 6, '3240000', 0),
+(82, 45, 'xz', '0123456789', 'user2@gmail.com', 6, '3240000', 3),
 (83, 46, 'az', '0123456', 'user3@gmail.com', 3, '7500000', 0),
-(84, 46, 'AS', '0123456', 'user3@gmail.com', 4, '2500000', 1);
+(84, 46, 'AS', '0123456', 'user3@gmail.com', 4, '2500000', 3),
+(86, 46, 'abc', '0123456', 'user3@gmail.com', 1, '2500000', 3),
+(87, 45, 'abc', '0123456789', 'user2@gmail.com', 2, '5000000', 0),
+(88, 45, 'abc', '0123456789', 'user2@gmail.com', 2, '1250000', 2),
+(89, 45, 'a', '0123456789', 'user2@gmail.com', 2, '336000', 2),
+(90, 45, 'a', '0123456789', 'user2@gmail.com', 1, '2500000', 1),
+(91, 45, 'a', '0123456789', 'user2@gmail.com', 1, '2500000', 3),
+(92, 45, 'ab', '0123456789', 'user2@gmail.com', 1, '625000', 1),
+(93, 45, 'a', '0123456789', 'user2@gmail.com', 1, '2500000', 2),
+(94, 45, 'a', '0123456789', 'user2@gmail.com', 1, '2500000', 1),
+(95, 45, 'e', '0123456789', 'user2@gmail.com', 1, '625000', 2),
+(96, 40, 'ab', '0123456789', 'user1@gmail.com', 2, '1250000', 2),
+(97, 47, 'a', '0123456', 'user4@gmail.com', 1, '625000', 2),
+(102, 45, 'a', '0123456789', 'user2@gmail.com', 2, '595000', 1),
+(103, 47, 'Ax', '0123456', 'user4@gmail.com', 2, '5000000', 2),
+(104, 40, 'abc', '0123456789', 'user1@gmail.com', 1, '2500000', 2),
+(105, 45, 'a', '0123456789', 'user2@gmail.com', 2, '3125000', 4);
 
 -- --------------------------------------------------------
 
@@ -103,7 +119,31 @@ INSERT INTO `order_details` (`id`, `product_id`, `num`, `price`) VALUES
 (81, 21, 3, '427000'),
 (82, 15, 6, '540000'),
 (83, 24, 3, '2500000'),
-(84, 23, 4, '625000');
+(84, 23, 4, '625000'),
+(86, 24, 1, '2500000'),
+(87, 24, 2, '2500000'),
+(88, 23, 2, '625000'),
+(89, 22, 2, '168000'),
+(90, 24, 1, '2500000'),
+(91, 24, 1, '2500000'),
+(92, 23, 1, '625000'),
+(93, 24, 1, '2500000'),
+(94, 24, 1, '2500000'),
+(95, 23, 1, '625000'),
+(96, 23, 2, '625000'),
+(97, 23, 1, '625000'),
+(98, 21, 1, '427000'),
+(99, 24, 1, '2500000'),
+(100, 23, 1, '625000'),
+(101, 24, 1, '2500000'),
+(101, 23, 1, '625000'),
+(101, 22, 1, '168000'),
+(102, 21, 1, '427000'),
+(102, 22, 1, '168000'),
+(103, 24, 2, '2500000'),
+(104, 24, 1, '2500000'),
+(105, 24, 1, '2500000'),
+(105, 23, 1, '625000');
 
 -- --------------------------------------------------------
 
@@ -172,10 +212,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `email`, `phone_number`, `password`, `uid`, `token`, `role`) VALUES
-(39, 'Trung', 'tr90642@gmail.com', '0123456789', '123456', 'rL1WSzeTQFSOeXlLfTF4FaHAM6K2', 'emMnj7QZT3qz3QUAqlqxQz:APA91bHNx7PNi6iOBkymMM_H1AQHWc9yzx50Y0FT6kIZJNQnyPypitiyyUof9EfM0p0Cy7ec6nT4tSfg-KDzY3vdz52FOV4FUiHlQlSQw1u78If4WNp_a5rpMb7REMu1LQ-UNa8ht9oc', 1),
-(40, 'user1', 'user1@gmail.com', '0123456789', '123456', 'd0Q6iitYoff0m4gnsJaHGCNA1DG3', 'dwdBspeoQN-673d69YeDUi:APA91bEQCutsyNRzzQm9B5TmQSlTF2FTxLMV9lP6wUdgjB3pbioFBRfeV5Dl0h2q7hkjf3BsEmkjXS6zSqqz_aaDFF6BbFBDBP8umscbkz-f4JCworjpk2i6wOhW4S8s2ZM0BQAq7PF_', 0),
-(45, 'user2', 'user2@gmail.com', '0123456789', 'onfirebase', 'TQmhgGAdz0glDMrmftaYmXoEtnu1', 'fTz3iclvT92JPdMDTwv_2X:APA91bH6281mdzqcAIufcXM9DA4xpDveB8_G1LCXYvBrTOD75FLbO7C4bPCfM98knKXcx71AgYwyDwci-LDvOJ3prTP5ZuzC4p9PUU4fgniJ7RbUpQkcH2vbvM8X0cdZtrRjkN206DN5', 0),
-(46, 'User', 'user3@gmail.com', '0123456', 'onfirebase', '9QydyiDHH7ObflhC9rX5edrIaXI3', 'fTz3iclvT92JPdMDTwv_2X:APA91bH6281mdzqcAIufcXM9DA4xpDveB8_G1LCXYvBrTOD75FLbO7C4bPCfM98knKXcx71AgYwyDwci-LDvOJ3prTP5ZuzC4p9PUU4fgniJ7RbUpQkcH2vbvM8X0cdZtrRjkN206DN5', 0);
+(39, 'Trung', 'tr90642@gmail.com', '0123456789', '123456', 'rL1WSzeTQFSOeXlLfTF4FaHAM6K2', 'cKtkYyMER_mAnrnh3FLPBI:APA91bHDkNbdpLWf0aL742GIiaElF3628paqv5bqhzdfLHMN1uWl4ZAhNqGR45HM0QRMkZ6N6g0Ldld_jtStpPNTBDELh7fWS5fZ6l64qC250gSP2WFxgRpTUddv27I4vs41ezpUYXYL', 1),
+(40, 'user1', 'user1@gmail.com', '0123456789', '123456', 'd0Q6iitYoff0m4gnsJaHGCNA1DG3', 'fvqZQfGOS1CUNt6PH4pai9:APA91bHHsnXQn4AnLGBxlcOW-QuuLr0sFriOMA5FhldW9pqmbLY3JxaMMzFoU9eWPVlTRAbJ-e3MKxQPmngVIn4WfdrK1HeO05hrBxb7UPKA86gD0UW6RPVWEP2-B8XdTe55i3QU8P8R', 0),
+(45, 'user2', 'user2@gmail.com', '0123456789', 'onfirebase', 'TQmhgGAdz0glDMrmftaYmXoEtnu1', 'doUh2AahRWidvwktVPI5jq:APA91bF_QHc3ZpoCQ65-xhf1L0vra_42suNcRSY-IgoY0UFQ5ErvCsZg62jFNZchktosf3UT-z97gZZGXNK2IMMHE99JViyrIXLNm3PFflslxxJQ6OXZv8EeJCgVMDmVfkkQOcd74qo3', 0),
+(46, 'User', 'user3@gmail.com', '0123456', 'onfirebase', '9QydyiDHH7ObflhC9rX5edrIaXI3', 'fvqZQfGOS1CUNt6PH4pai9:APA91bHHsnXQn4AnLGBxlcOW-QuuLr0sFriOMA5FhldW9pqmbLY3JxaMMzFoU9eWPVlTRAbJ-e3MKxQPmngVIn4WfdrK1HeO05hrBxb7UPKA86gD0UW6RPVWEP2-B8XdTe55i3QU8P8R', 0),
+(47, 'user4', 'user4@gmail.com', '0123456', 'onfirebase', 'q6E6k3hnxZh0QNyhzpTSl3731fW2', 'fvqZQfGOS1CUNt6PH4pai9:APA91bHHsnXQn4AnLGBxlcOW-QuuLr0sFriOMA5FhldW9pqmbLY3JxaMMzFoU9eWPVlTRAbJ-e3MKxQPmngVIn4WfdrK1HeO05hrBxb7UPKA86gD0UW6RPVWEP2-B8XdTe55i3QU8P8R', 0),
+(48, 'User5', 'user5@gmail.com', '0123456789', 'onfirebase', 'S4L39o4BsnOKnMCmJ6FDWjzOilj1', 'fvqZQfGOS1CUNt6PH4pai9:APA91bHHsnXQn4AnLGBxlcOW-QuuLr0sFriOMA5FhldW9pqmbLY3JxaMMzFoU9eWPVlTRAbJ-e3MKxQPmngVIn4WfdrK1HeO05hrBxb7UPKA86gD0UW6RPVWEP2-B8XdTe55i3QU8P8R', 0);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -227,19 +269,19 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
